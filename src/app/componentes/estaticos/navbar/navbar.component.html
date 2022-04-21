@@ -1,0 +1,4 @@
+<header class="header-component">
+    <button type="button" style="font-size: 1rem;" class="btn btn-primary m-5" *ngIf="!usuarioService.getRegistrado()" [routerLink]="['/inicio']" >Empezar </button>
+    <button type="button" style="font-size: 1rem;" class="btn btn-primary m-5" *ngIf="usuarioService.getRegistrado()"  >Perfil </button>
+</header>

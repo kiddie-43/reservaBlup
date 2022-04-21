@@ -1,0 +1,51 @@
+
+<div class="container-fluid">
+   
+     
+    <div class="form" >
+        <h1 class="text-center">Inicio de sesion </h1>
+        <form class="formulario" [formGroup]="forma" autocomplete="off">
+
+            <div class="text-center m-3">
+                <mat-form-field appearance="fill" class="input">
+                    <mat-label>Enter your email</mat-label>
+                  
+                    <input matInput type="text" formControlName="emailUser">
+                  
+                    <button mat-icon-button matSuffix>
+                        <mat-icon matSuffix class="material-icons">email</mat-icon>
+                    </button>
+                
+                </mat-form-field>
+    
+            </div>
+    
+            <div class="text-center m-3">
+    
+                <mat-form-field appearance="fill" class="input">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="passUser">
+    
+                    <button mat-icon-button matSuffix (click)="hidePass()" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <span matSuffix class="material-icons"> {{ (hide ? "visibility_off" : "visibility" )}}
+                        </span>
+                    </button>
+                </mat-form-field>
+    
+            </div>
+    
+    
+            <div class="text-center m-3">
+                <a class="text-dark" routerLink="/registrarse">No tienes cuenta ? Registate aqui </a>
+            </div>
+    
+    
+            <div class="text-center m-6">
+                <button [disabled]="forma.invalid" mat-raised-button color="primary" class="buton-login" (click)="inicioSesion()" >Inicio sesion</button>
+            </div>
+    
+        </form>
+
+    </div>
+

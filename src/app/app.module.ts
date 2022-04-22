@@ -18,7 +18,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './componentes/estaticos/inicio/inicio.component';
-
+import { GoogleMapsComponent } from './componentes/estaticos/utilidades/google-maps/google-maps.component';
+MatButtonModule
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { InicioComponent } from './componentes/estaticos/inicio/inicio.component
     LoadingComponent,
     CarruselComponent,
     InicioComponent,
-  
+    GoogleMapsComponent,
+    
 
     
     
@@ -44,7 +47,9 @@ import { InicioComponent } from './componentes/estaticos/inicio/inicio.component
      BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatInputModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    MatButtonModule, 
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './componentes/estaticos/inicio/inicio.component';
 import { GoogleMapsComponent } from './componentes/estaticos/utilidades/google-maps/google-maps.component';
 MatButtonModule
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
+import { PuntuacionComponent } from './componentes/estaticos/utilidades/puntuacion/puntuacion.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { TabComponent } from './componentes/estaticos/utilidades/tab/tab.component';
+import {MatIconModule} from '@angular/material/icon';
+import { ComentarioComponent } from './componentes/estaticos/comentario/comentario.component';
+import { ComentariosComponent } from './componentes/estaticos/utilidades/comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -35,21 +41,27 @@ import {MatSliderModule} from '@angular/material/slider';
     CarruselComponent,
     InicioComponent,
     GoogleMapsComponent,
-    
+    PuntuacionComponent,
+    TabComponent,
+    ComentarioComponent,
+    ComentariosComponent,
 
-    
-    
+
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
-     BrowserAnimationsModule,
+    BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatInputModule, 
-    ReactiveFormsModule, 
-    MatButtonModule, 
-    MatSliderModule
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSliderModule,
+    MatTabsModule, 
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

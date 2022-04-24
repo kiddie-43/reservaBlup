@@ -17,15 +17,6 @@ export class LocalComponent implements OnInit {
     private localService: LocalesService,
     private activateRoute: ActivatedRoute
   ) { }
-  puntuacion(value: number) {
-  
-     
-     console.log(value);
-
-   return value + " "; 
-
-    
-  }
   ngOnInit(): void {
 
     this.activateRoute.params.subscribe((params) => {

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  forma!: FormGroup;
+
+
+
+  constructor(
+    private fb: FormBuilder,
+
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  
+
+  
   }
 
 }

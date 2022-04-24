@@ -1,0 +1,21 @@
+<form [formGroup]="forma">
+    <div>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Comentario</mat-label>
+            
+           <textarea matInput  placeholder="comentario... " cols="40" rows="10" formControlName="comentario" ></textarea>
+           
+        </mat-form-field>
+    </div>
+
+    <div>
+        <label>Puntuacion</label>
+        <mat-slider style="width: 100%; font-size: 3rem; height: 1rem;" thumbLabel [displayWith]="puntuacion"
+            tickInterval="1" step="1" min="0" max="10" aria-label="units" formControlName="puntuacion">
+        </mat-slider>
+    </div>
+    <div class="mt-5">
+        <button mat-button (click)="enviarFormulario()">Comentar</button>
+    </div>
+
+</form>

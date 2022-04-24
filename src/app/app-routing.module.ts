@@ -6,15 +6,21 @@ import { InicioComponent } from './componentes/estaticos/inicio/inicio.component
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, 
-  { path: 'home', component: HomeComponent }, 
-  { path: 'local/:id_local', component: LocalComponent  },
-   { path: 'inicio', component: InicioComponent   },
-  { path: '**', pathMatch:'full', redirectTo:'home' }
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'local/:id_local', component: LocalComponent },
+  { path: 'inicio', component: InicioComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+
+
+
+
+  
+}

@@ -1,32 +1,17 @@
 <app-loading *ngIf="cargando" class="d-flex align-items-center "></app-loading>
+<div>
 
-<div class="row d-flex align-items-center " *ngIf="!cargando">
+</div>
+<div class="row d-flex align-items-center text-center"  *ngIf="!cargando">
 
-    <div class="col-lg-6 d-flex justify-content-center">
-        <div id="carouselExampleControls" class="carousel slide d-flex align-items-center " data-bs-ride="carousel"
-            style="width: 80%;">
-            <div class="carousel-inner">
-                <div *ngFor="let enlace of carusel ; let i = index"
-                    [ngClass]="i === 0 ? 'carousel-item active':'carousel-item'">
-                    <img src="{{enlace}}" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+    <div class="col-lg-12 d-flex justify-content-center">
+       <app-carrusel [carrusel]="local.carrusel" ></app-carrusel>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-12 mt-3">
         <div class="rounded container-input">
             <p class="header-text"> Nombre del local </p>
+         <mat-divider class="mb-3 bg-dark" ></mat-divider>
             <p>{{local.nombre_local}}</p>
         </div>
         <div class="rounded container-input">
@@ -37,6 +22,7 @@
         <div class="rounded container-input ">
 
             <p class="header-text">Direccion </p>
+            <mat-divider class="mb-3 bg-dark" ></mat-divider>
             <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
                     marginwidth="0"
                     src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
@@ -46,12 +32,14 @@
         <div class="rounded container-input">
 
             <p class="header-text">Puntuacion </p>
+            <mat-divider class="mb-3 bg-dark" ></mat-divider>
             <app-puntuacion></app-puntuacion>
         </div>
 
 
         <div class="rounded container-input">
             <p class="header-text">Comentar </p>
+            <mat-divider class="mb-3 bg-dark" ></mat-divider>
             <app-comentario></app-comentario>
 
         </div>
@@ -59,25 +47,24 @@
 
         <div class="rounded container-input">
             <p class="header-text">Reservar </p>
+            <mat-divider class="mb-3 bg-dark" ></mat-divider>
             <p> <button mat-button>Reservar</button></p>
         </div>
     </div>
 
-
-
-</div>
-
-<div class="container-input mt-3 m-1 p-2">
-    <p class="header-text">Cometarios</p>
-
-    <div class="d-flex justify-content-start  flex-column">
-       
-<app-comentarios></app-comentarios>
-
-
+    <div class="container-input mt-3 m-1 p-2">
+        <p class="header-text">Cometarios</p>
+        <div class="d-flex justify-content-start  flex-column">
+            <app-comentarios></app-comentarios>
+        </div>
     </div>
+    
+
+
+
 
 </div>
+
 
 
 

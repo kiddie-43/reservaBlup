@@ -27,6 +27,8 @@ import { TabComponent } from './componentes/estaticos/utilidades/tab/tab.compone
 import {MatIconModule} from '@angular/material/icon';
 import { ComentarioComponent } from './componentes/estaticos/comentario/comentario.component';
 import { ComentariosComponent } from './componentes/estaticos/utilidades/comentarios/comentarios.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { ComentariosComponent } from './componentes/estaticos/utilidades/comenta
     MatButtonModule,
     MatSliderModule,
     MatTabsModule, 
-    MatIconModule
+    MatIconModule, 
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

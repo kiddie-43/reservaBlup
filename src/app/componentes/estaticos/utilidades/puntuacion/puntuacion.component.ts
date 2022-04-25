@@ -10,7 +10,7 @@ export class PuntuacionComponent implements OnInit {
  color: ThemePalette = 'primary';
    mode: ProgressSpinnerMode = 'determinate';
    value = 100;
-   valueMedia = 5;
+   valueMedia = 10;
   constructor(
    
   ) { }

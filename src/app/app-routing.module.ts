@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'local/:id_local', component: LocalComponent },
   { path: 'inicio', component: InicioComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'home' }
+ // { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({

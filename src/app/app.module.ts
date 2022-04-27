@@ -28,6 +28,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { ComentarioComponent } from './componentes/estaticos/comentario/comentario.component';
 import { ComentariosComponent } from './componentes/estaticos/utilidades/comentarios/comentarios.component';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatTabsModule, 
     MatIconModule, 
     MatDividerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

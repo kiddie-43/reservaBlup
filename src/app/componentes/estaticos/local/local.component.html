@@ -1,159 +1,143 @@
 <app-loading *ngIf="cargando" class="d-flex align-items-center "></app-loading>
-<div>
 
-</div>
-<div class="row d-flex align-items-center text-center"  *ngIf="!cargando">
 
-    <div class="col-lg-12 d-flex justify-content-center">
-       <app-carrusel [carrusel]="local.carrusel" ></app-carrusel>
+<div style="width: 100%;" class="d-flex justify-content-center align-items-center flex-column" *ngIf="!cargando">
+
+
+
+    <div  class="carrusel-container ">
+        <app-carrusel class="w-100" [carrusel]="local.carrusel" class="carrusel"></app-carrusel>
     </div>
 
-    <div class="col-lg-12 mt-3">
-        <div class="rounded container-input">
-            <p class="header-text"> Nombre del local </p>
-         <mat-divider class="mb-3 bg-dark" ></mat-divider>
-            <p>{{local.nombre_local}}</p>
-        </div>
-        <div class="rounded container-input">
-            <app-tab></app-tab>
-        </div>
+    <div class="rounded container-input carrusel-container" style="width: 100%;">
+        <p class="header-text"> Nombre del local </p>
+        <mat-divider class="mb-3 bg-dark"></mat-divider>
+        <p>{{local.nombre_local}}</p>
+    </div>
 
+    <div class="rounded container-input carrusel-container">
 
-        <div class="rounded container-input ">
-
-            <p class="header-text">Direccion </p>
-            <mat-divider class="mb-3 bg-dark" ></mat-divider>
-            <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
-                    marginwidth="0"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-                        href="https://www.gps.ie/car-satnav-gps/">GPS devices</a></iframe></div>
-        </div>
-
-        <div class="rounded container-input">
-
-            <p class="header-text">Puntuacion </p>
-            <mat-divider class="mb-3 bg-dark" ></mat-divider>
-            <app-puntuacion></app-puntuacion>
-        </div>
-
-
-        <div class="rounded container-input">
-            <p class="header-text">Comentar </p>
-            <mat-divider class="mb-3 bg-dark" ></mat-divider>
-            <app-comentario></app-comentario>
-
-        </div>
-
-
-        <div class="rounded container-input">
-            <p class="header-text">Reservar </p>
-            <mat-divider class="mb-3 bg-dark" ></mat-divider>
-            <p> <button mat-button>Reservar</button></p>
+        <p class="header-text">Direccion </p>
+        <mat-divider class="mb-3 bg-dark"></mat-divider>
+        <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                    href="https://www.gps.ie/car-satnav-gps/">GPS devices</a></iframe>
         </div>
     </div>
 
-    <div class="container-input mt-3 m-1 p-2">
-        <p class="header-text">Cometarios</p>
-        <div class="d-flex justify-content-start  flex-column">
-            <app-comentarios></app-comentarios>
-        </div>
+    <div class="rounded container-input carrusel-container">
+        <app-tab></app-tab>
     </div>
-    
+<!-- 
+    <div class="rounded container-input">
+        <p class="header-text">Puntuacion </p>
+        <mat-divider class="mb-3 bg-dark"></mat-divider>
+        <app-puntuacion></app-puntuacion>
+    </div> -->
 
+    <div class="rounded container-input carrusel-container">
+        <p class="header-text">Comentar </p>
+        <mat-divider class="mb-3 bg-dark"></mat-divider>
+        <app-comentario></app-comentario>
+    </div>
+    <div class="rounded container-input carrusel-container">
+        <p class="header-text">Reservar </p>
+        <mat-divider class="mb-3 bg-dark"></mat-divider>
+        <p> <button mat-button>Reservar</button></p>
+    </div>
+    <div style="width:100%" class="d-flex justify-content-center align-items-center carrusel-container">
+        <div class=" mt-3 m-1 p-2" style="width: 100%;">
+            <p class="header-text">Cometarios</p>
+           
+            <mat-divider class="mb-3 bg-dark"></mat-divider>
+           
+            <div class="d-flex justify-content-start align-items-start  flex-column">
+                <app-comentarios class="carrusel-container"></app-comentarios>
+                <app-comentarios class="carrusel-container"></app-comentarios>
+                <app-comentarios class="carrusel-container"></app-comentarios>
+                <app-comentarios class="carrusel-container"></app-comentarios>
 
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class=" d-flex justify-content-center" >
-
-    <div class="row  p-5">
-        <div class="col-lg-6 d-flex justify-content-center m-2">
-            
-            <div id="carouselExampleControls" class="carousel slide d-flex align-items-center " data-bs-ride="carousel"
-                style="width: 80%;">
-                <div class="carousel-inner">
-                    <div *ngFor="let enlace of carusel ; let i = index"
-                        [ngClass]="i === 0 ? 'carousel-item active':'carousel-item'">
-                        <img src="{{enlace}}" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
-    
-        <div class="col-lg-6 rounded"
-            style="border: 2px solid rgba(0, 0, 0, 0.12);  background-color: rgba(177, 177, 177, 0.161);">
-    
-            <div class="rounded " style="background-color: rgba(177, 177, 177, 0.161); padding: 1rem;">
-                <p class="header-text">Nombre del local </p>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="row d-flex align-items-center text-center container-input" *ngIf="!cargando">
+
+    <div class="col-lg-6 col-md-12 d-flex justify-content-center">
+        <app-carrusel [carrusel]="local.carrusel"></app-carrusel>
+    </div>
+
+    <div class="col-lg-6 col-md-12 mt-3 d-flex justify-content-center flex-column" style="width: 100%;">
+        <div style="width: 100%;" class="d-flex justify-content-center align-items-center flex-column">
+          
+            <div class="rounded container-input" style="width: 100%;">
+                <p class="header-text"> Nombre del local </p>
+                <mat-divider class="mb-3 bg-dark"></mat-divider>
                 <p>{{local.nombre_local}}</p>
             </div>
-            <div class="rounded " style="background-color: rgba(177, 177, 177, 0.161); padding: 1rem; width: 100%;">
-                <p class="header-text">Descripcion </p>
-                <p>{{local.descripcion}}</p>
-            </div>
-    
-    
-            <div class="rounded " style="background-color: rgba(177, 177, 177, 0.161); padding: 1rem; width: 100%;">
-    
+
+            <div class="rounded container-input ">
+
                 <p class="header-text">Direccion </p>
-                <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/car-satnav-gps/">GPS devices</a></iframe></div>
+                <mat-divider class="mb-3 bg-dark"></mat-divider>
+                <div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no"
+                        marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                            href="https://www.gps.ie/car-satnav-gps/">GPS devices</a></iframe></div>
             </div>
-    
-            <div class="rounded " style="background-color: rgba(177, 177, 177, 0.161); padding: 1rem; width: 100%;">
-    
+
+            <div class="rounded container-input">
+                <app-tab></app-tab>
+            </div>
+
+            <div class="rounded container-input">
                 <p class="header-text">Puntuacion </p>
-                <p>5,5 / 10</p>
+                <mat-divider class="mb-3 bg-dark"></mat-divider>
+                <app-puntuacion></app-puntuacion>
             </div>
-    
-    
-            <div class="rounded " style="background-color: rgba(177, 177, 177, 0.161); padding: 1rem; width: 100%;">
+
+            <div class="rounded container-input">
                 <p class="header-text">Comentar </p>
-                <form>
-                    <label>Comentario</label>
-                    <input type="text">
-    
-                    <mat-slider style="width: 100%; font-size: 3rem; height: 1rem;"
-                     thumbLabel                
-                    tickInterval="1"
-                    step="1"
-                    min="0"
-                    max="10"
-                    aria-label="units"></mat-slider>
-                    <br>
-                  <button>publicar</button>
-                </form>
+                <mat-divider class="mb-3 bg-dark"></mat-divider>
+                <app-comentario></app-comentario>
             </div>
-    
-    
-            <div class="rounded " style="background-color: rgba(177, 177, 177, 0.161); padding: 1rem; width: 100%;">
+            <div class="rounded container-input">
                 <p class="header-text">Reservar </p>
-                <p><button>Reservar</button></p>
+                <mat-divider class="mb-3 bg-dark"></mat-divider>
+                <p> <button mat-button>Reservar</button></p>
             </div>
-    
-    
-    
         </div>
-    
+        <div style="width:100%" class="d-flex justify-content-center align-items-center ">
+            <div class=" mt-3 m-1 p-2" style="width: 50%;">
+                <p class="header-text">Cometarios</p>
+                <mat-divider class="mb-3 bg-dark"></mat-divider>
+                <div class="d-flex justify-content-center align-items-center  flex-column">
+                    <app-comentarios></app-comentarios>
+                </div>
+            </div>
+        </div>
     </div>
 </div> -->

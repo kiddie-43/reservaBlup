@@ -1,4 +1,4 @@
-<mat-tab-group mat-align-tabs="center">
+<mat-tab-group mat-align-tabs="start">
     <mat-tab>
       <ng-template mat-tab-label class="header-text">
         Descripcion
@@ -12,7 +12,7 @@
     </mat-tab>
   
     <mat-tab>
-      <ng-template mat-tab-label >
+      <ng-template mat-tab-label="aaaaa" >
         Menu 
         <mat-icon class="example-tab-icon ml-1" >restaurant</mat-icon>
         
@@ -22,6 +22,16 @@
       </div>
    
     </mat-tab>
-  
+    <mat-tab style="font-size: 123rem;">
+      <ng-template mat-tab-label="aaaaa"  >
+        Puntuacion 
+        <mat-icon class="example-tab-icon ml-1" >restaurant</mat-icon>
+        
+      </ng-template>
+      <div class="p-2">
+      <app-puntuacion></app-puntuacion>
+      </div>
+   
+    </mat-tab>
   
   </mat-tab-group>

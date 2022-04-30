@@ -29,7 +29,8 @@ import { ComentarioComponent } from './componentes/estaticos/comentario/comentar
 import { ComentariosComponent } from './componentes/estaticos/utilidades/comentarios/comentarios.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { MensageComponent } from './componentes/estaticos/utilidades/mensage/mensage.component'; 
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {MatCardModule} from '@angular/material/card';
     TabComponent,
     ComentarioComponent,
     ComentariosComponent,
+    MensageComponent,
 
 
 
@@ -66,7 +68,8 @@ import {MatCardModule} from '@angular/material/card';
     MatTabsModule, 
     MatIconModule, 
     MatDividerModule,
-    MatCardModule
+    MatCardModule, 
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@
         <app-tarjeta-comentario [comentario]="comment"></app-tarjeta-comentario>
     </div>
 
-    <div>
+    <div *ngIf="comment.id_usuario == idUsuario">
         <button mat-button color="primary" (click)="actualizarComentario(comment)">Editar</button>
         <button mat-button color="warn" (click)="eliminarComentario(comment.id)">Eliminar</button>
     </div>

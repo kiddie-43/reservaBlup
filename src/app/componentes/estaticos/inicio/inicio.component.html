@@ -1,25 +1,107 @@
-<div class="d-flex justify-content-center">
-    <form>
+
+<div class="container-fluid">
    
-        <div class="form-group">
+
+           
+     
+     
+     <div class="form" >
+         <h1 class="text-center">Inicio de sesion </h1>
+         <form class="formulario" [formGroup]="inicioSesionUsuarioForm" autocomplete="off">
+ 
+             <div class="text-center m-3">
+                 <mat-form-field appearance="outline" class="input">
+                     <mat-label>Enter your email</mat-label>
+                   
+                     <input matInput type="text" formControlName="emailUser">
+                   
+                     <button mat-icon-button matSuffix>
+                         <mat-icon matSuffix class="material-icons">email</mat-icon>
+                     </button>
+                 
+                 </mat-form-field>
+     
+             </div>
+     
+             <div class="text-center m-3">
+     
+                 <mat-form-field appearance="fill" class="input">
+                     <mat-label>Enter your password</mat-label>
+                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="passUser">
+     
+                     <button mat-icon-button matSuffix (click)="hidePass()" [attr.aria-label]="'Hide password'"
+                         [attr.aria-pressed]="hide">
+                         <mat-icon matSuffix class="material-icons"> {{ (hide ? "visibility_off" : "visibility" )}}
+                         </mat-icon>
+                     </button>
+                 </mat-form-field>
+     
+             </div>
+     
+     
+             <div class="text-center m-3">
+                 <a class="text-dark" routerLink="/registrarse">No tienes cuenta ? Registate aqui </a>
+             </div>
+     
+     
+             <div class="text-center m-6">
+                 <button [disabled]="inicioSesionUsuarioForm.invalid" mat-raised-button color="primary" class="buton-login" (click)="inicioSesion()" >Inicio sesion</button>
+             </div>
+     
+         </form>
+ 
+     </div>
+ 
+ 
+ </div>
+ 
+<!-- 
+ <div class="d-flex justify-content-center flex-column">
+    <h1 class="text-center">Inicio de sesion </h1>
+
+    <form [formGroup]="inicioSesionUsuarioForm" style="width: 70%;">
+        <div>
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Comentario</mat-label>
+                <textarea matInput placeholder="comentario... " cols="40" rows="10" formControlName="emailUser"></textarea>
+            </mat-form-field>
+        </div>
+    
+        <div>
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Comentario</mat-label>
+                <textarea matInput placeholder="comentario... " cols="40" rows="10" formControlName="passUser"></textarea>
+            </mat-form-field>
+           
+        </div>
+        <div class="mt-5 d-flex aling-items-center justify-content-center">
+            <button mat-button (click)="inicioSesion()">Comentar</button>
+        </div>
+    
+    </form> -->
+
+    <!-- <form class="" [formGroup]="inicioSesionUsuarioForm" autocomplete="off">
+   
+    
+        <div class="form-group mb-2">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
+                placeholder="Enter email" formControlName="emailUser">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
    
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input matInput [type]="hide ? 'password' : 'text'" class="form-control" id="exampleInputPassword1" formControlName="passUser" placeholder="Password">
         </div>
    
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-   
-        <button type="submit" class="btn btn-primary">Submit</button>
 
-    </form>
+        <div class="text-center m-6">
+            <button [disabled]="inicioSesionUsuarioForm.invalid" mat-raised-button color="primary" class="buton-login" (click)="inicioSesion()" >Inicio sesion</button>
+        </div>
+    </form> -->
 
-</div>

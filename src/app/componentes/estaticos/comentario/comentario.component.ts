@@ -39,9 +39,9 @@ export class ComentarioComponent implements OnInit {
     const params = {
       descripcion: this.formularioComentario.controls?.['comentario'].value,
       puntuacion: this.formularioComentario.controls?.['puntuacion'].value,
-      idUsuario: 34,
-      idLocal: this.data.data.idLocal
-      // idUsuario: localStorage.getItem(environment.userCode),
+      //idUsuario: 34,
+      idLocal: this.data.data.idLocal,
+       idUsuario: localStorage.getItem(environment.userCode),
 
     }
     this.comnetarioServie.createComentario(params).subscribe((resp: any) => {

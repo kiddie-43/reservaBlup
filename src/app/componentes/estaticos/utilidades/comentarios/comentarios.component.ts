@@ -3,6 +3,7 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dial
 import { ComentarioComponent } from '../../comentario/comentario.component';
 import { ComentariosService } from '../../../../servicios/comentarios.service';
 import { TarjetaComentarioComponent } from './tarjeta-comentario/tarjeta-comentario.component';
+import { environment } from '../../../../../environments/environment.prod';
 
 
 @Component({
@@ -20,12 +21,15 @@ export class ComentariosComponent implements OnInit {
   @Input() cambiosComentarios !: boolean ;
   
   comentarios: Array<any> = [];
-
+  idUsuario = localStorage.getItem(environment.userCode);
   constructor(
     private dialog: MatDialog,
     private comentariosService: ComentariosService
 
-  ) { }
+  ) { 
+
+    console.log(this.idUsuario);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
   

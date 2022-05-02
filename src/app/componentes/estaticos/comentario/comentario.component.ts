@@ -45,7 +45,7 @@ export class ComentarioComponent implements OnInit {
       // idUsuario: localStorage.getItem(environment.userCode),
 
     }
-    this.comnetarioServie.crearComentario(params).subscribe((resp: any) => {
+    this.comnetarioServie.createComentario(params).subscribe((resp: any) => {
       if (resp['mensage'].mensageType === 1) {
         this.dialogRef.close(true);
       }
@@ -57,7 +57,7 @@ export class ComentarioComponent implements OnInit {
 
   }
 
-  actualizarComentario(idComentario: number | undefined) {
+  updateComentario(idComentario: number | undefined) {
     const params = {
       descripcion: this.formularioComentario.controls?.['comentario'].value,
       puntuacion: this.formularioComentario.controls?.['puntuacion'].value,
@@ -77,7 +77,7 @@ export class ComentarioComponent implements OnInit {
     if (!this.data.edit) {
       this.crearComentario();
     } else {
-      this.actualizarComentario(this.data.idComentario);
+      this.updateComentario(this.data.idComentario);
     }
 
 

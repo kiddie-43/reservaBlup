@@ -7,26 +7,26 @@ import { environment } from '../../environments/environment.prod';
 })
 export class ComentariosService {
 
-  constructor ( 
-    private http : HttpClient
+  constructor(
+    private http: HttpClient
   ) { }
 
-obtenerComentarios (){
+  getComentarios(id_local: number) {
+    return this.http.get(`${environment.urlServer}/comentarios/getComentarios.php?id_local=${id_local}`)
+  }
 
-}
+  createComentario(params: any) {
 
-crearComentario(params : any){
-  console.log(params)
-return this.http.post(`${environment.urlServer}/comentarios/crearComentario.php`,JSON.stringify(params))
-}
+    return this.http.post(`${environment.urlServer}/comentarios/createComentario.php`, JSON.stringify(params))
+  }
 
 
-eliminarComentario (idComentario : number){
+  deleteComentario(idComentario: number) {
+    this.http.delete(`${environment.urlServer}/comentarios/deleteComentario.php?id_comentario=${idComentario}`)
+  }
 
-}
-
-actualizarComentario (){
-
-}
+  updateComentario(params : any) {
+  this.http.put(`${environment.urlServer}/comentarios/updateCoemntario.php`, JSON.stringify(params));
+  }
 
 }

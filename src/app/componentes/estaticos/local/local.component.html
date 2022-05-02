@@ -25,13 +25,13 @@
                     href="https://www.gps.ie/car-satnav-gps/">GPS devices</a></iframe>
         </div>
     </div>
-
+<!-- 
     <div class="rounded container-input carrusel-container ">
         <app-tab [descripciones]="local.descripcion" [valoracion]="local.comentarios.valoracion" > </app-tab>
-    </div>
+    </div> -->
 
 
-    <div class="rounded container-input ">
+    <div class="rounded container-input carrusel-container">
         <p class="header-text">Comentar </p>
         <mat-divider class="mb-3 bg-dark"></mat-divider>
         <button (click)="crearCoemtario()" mat-raised-button>Crear comentario</button>
@@ -49,9 +49,9 @@
            
             <mat-divider class="mb-3 bg-dark"></mat-divider>
            
-            <div class="d-flex justify-content-start align-items-start  flex-column container-coments">
+            <!-- <div class="d-flex justify-content-start align-items-start  flex-column container-coments">
                 <app-comentarios [comentario]="coment" *ngFor="let coment of local.comentarios.comentarios" style="width: 100%; margin-bottom: 1rem;" ></app-comentarios>
-            </div>
+            </div> -->
         </div>
     </div>
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from '../../environments/environment.prod';
 
 @Injectable({
@@ -13,13 +13,13 @@ export class LocalesService {
   ) { }
   
   
-  
-  
   obtenerLocales() {
     return this.http.get(`${environment.urlServer}/locales/locales.php`);
   }
 
   getLocal(id: any) {
-   return this.http.get(`${environment.urlServer}/locales/local.php?id_local=` + id);
+   return this.http.get(`${environment.urlServer}/locales/local.php?id_local=` + id).pipe(map((result:any)=>{
+     return result.datos;
+   }));
   }
 }

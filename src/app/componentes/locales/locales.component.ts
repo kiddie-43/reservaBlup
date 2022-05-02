@@ -27,8 +27,6 @@ export class LocalesComponent implements OnInit {
 
     return this.localesService.obtenerLocales().subscribe((params: any) => {
      const response = params;
-     console.log(response);
-     
      this.listaLocales = response[0];
      this.cargando = false;
       return this.listaLocales;

@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ComentarioComponent } from '../comentario/comentario.component';
 import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
+import { ComentariosService } from '../../../servicios/comentarios.service';
 
 @Component({
   selector: 'app-local',
@@ -20,6 +21,7 @@ export class LocalComponent implements OnInit {
     private localService: LocalesService,
     private activateRoute: ActivatedRoute,
     private dialog: MatDialog,
+    private comentariosService: ComentariosService
   //  public dialogRef : MatDialogRef<any>,
 
   ) { }
@@ -30,18 +32,14 @@ export class LocalComponent implements OnInit {
       this.idLocal = params['id_local'];
       //this.getLocal(params['id_local']);
       this.getLocal();
+      this.getComentarios()
     });
   }
 
 
   getLocal() {
-
-    this.localService.getLocal(this.idLocal).subscribe((result: any) => {
-
-      this.carusel = result['carrusel'];
-
+    this.localService.getLocal(this.idLocal).subscribe((result: any) => {     
       this.local = result;
-
       this.cargando = false;
     });
   }
@@ -64,7 +62,9 @@ export class LocalComponent implements OnInit {
   }
 
   getComentarios(){
-    
+    this.comentariosService.getComentarios(this.idLocal).subscribe((result : any)=>{
+      
+    })
   }
 }
 

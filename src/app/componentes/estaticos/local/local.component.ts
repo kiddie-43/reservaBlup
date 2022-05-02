@@ -18,7 +18,7 @@ export class LocalComponent implements OnInit {
   carusel !: Array<string>;
   idLocal !: number;
   comentarios : any;
-  updateComent : any = false;
+  updateComent : boolean = false;
 
   constructor(
     private localService: LocalesService,
@@ -48,7 +48,7 @@ export class LocalComponent implements OnInit {
   }
 
   crearComentario() {
-    this.updateComent = !this.updateComent;
+   
     const params = {
       edit: false,
       data: {
@@ -60,7 +60,8 @@ export class LocalComponent implements OnInit {
 
      dialogRef.afterClosed().subscribe((resp: any) => {
       this.getLocal();
-      this.updateComent = true;
+  
+       this.updateComent = !this.updateComent;
     })
 
   }

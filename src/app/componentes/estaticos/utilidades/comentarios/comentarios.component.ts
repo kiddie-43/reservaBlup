@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ComentarioComponent } from '../../comentario/comentario.component';
 import { ComentariosService } from '../../../../servicios/comentarios.service';
@@ -17,7 +17,8 @@ export class ComentariosComponent implements OnInit {
   //@ViewChild(TarjetaComentarioComponent)child  ;
 
   @Input() idLocal: number = 0;
-
+  @Input() cambiosComentarios !: boolean ;
+  
   comentarios: Array<any> = [];
 
   constructor(
@@ -25,6 +26,14 @@ export class ComentariosComponent implements OnInit {
     private comentariosService: ComentariosService
 
   ) { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+  
+      this.getComentarios();
+ 
+
+    console.log("actualizar")
+  }
 
   ngOnInit(): void {
     this.getComentarios();

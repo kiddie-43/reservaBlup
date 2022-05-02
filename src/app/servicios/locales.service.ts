@@ -16,10 +16,10 @@ export class LocalesService {
   
   
   obtenerLocales() {
-    return this.http.get(`${environment.urlServer}locales/locales.php`);
+    return this.http.get(`${environment.urlServer}/locales/locales.php`);
   }
 
   getLocal(id: any) {
-   return this.http.get(`${environment.urlServer}locales/local.php?id_local=` + id);
+   return this.http.get(`${environment.urlServer}/locales/local.php?id_local=` + id);
   }
 }

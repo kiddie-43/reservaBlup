@@ -9,13 +9,13 @@
         <app-carrusel class="w-100" [carrusel]="local.carrusel" class="carrusel"></app-carrusel>
     </div>
 
-    <div class="rounded container-input carrusel-container" style="width: 100%;">
+    <div class="rounded container-input carrusel-container carrusel" >
         <p class="header-text"> Nombre del local </p>
         <mat-divider class="mb-3 bg-dark"></mat-divider>
         <p>{{local.nombre_local}}</p>
     </div>
 
-    <div class="rounded container-input ">
+    <div class="rounded container-input carrusel-container carrusel">
 
         <p class="header-text">Direccion </p>
         <mat-divider class="mb-3 bg-dark"></mat-divider>
@@ -26,38 +26,31 @@
         </div>
     </div>
 
-    <div class="rounded container-input ">
-        <app-tab></app-tab>
+    <div class="rounded container-input carrusel-container ">
+        <app-tab [descripciones]="local.descripcion" [valoracion]="local.comentarios.valoracion" > </app-tab>
     </div>
-<!-- 
-    <div class="rounded container-input">
-        <p class="header-text">Puntuacion </p>
-        <mat-divider class="mb-3 bg-dark"></mat-divider>
-        <app-puntuacion></app-puntuacion>
-    </div> -->
+
 
     <div class="rounded container-input ">
         <p class="header-text">Comentar </p>
         <mat-divider class="mb-3 bg-dark"></mat-divider>
-        <app-comentario></app-comentario>
+        <button (click)="crearCoemtario()" mat-raised-button>Crear comentario</button>
     </div>
-    <div class="rounded container-input ">
+
+    <div class="rounded container-input carrusel-container">
         <p class="header-text">Reservar </p>
         <mat-divider class="mb-3 bg-dark"></mat-divider>
         <p> <button mat-button>Reservar</button></p>
     </div>
-    <div style="width:100%" class="d-flex justify-content-center align-items-center ">
+    
+    <div style="width:100%" class="d-flex justify-content-center align-items-center carrusel-container">
         <div class=" mt-3 m-1 p-2" style="width: 100%;">
             <p class="header-text">Cometarios</p>
            
             <mat-divider class="mb-3 bg-dark"></mat-divider>
            
-            <div class="d-flex justify-content-start align-items-start  flex-column">
-                <app-comentarios class="carrusel-container"></app-comentarios>
-                <app-comentarios class="carrusel-container"></app-comentarios>
-                <app-comentarios class="carrusel-container"></app-comentarios>
-                <app-comentarios class="carrusel-container"></app-comentarios>
-
+            <div class="d-flex justify-content-start align-items-start  flex-column container-coments">
+                <app-comentarios [comentario]="coment" *ngFor="let coment of local.comentarios.comentarios" style="width: 100%; margin-bottom: 1rem;" ></app-comentarios>
             </div>
         </div>
     </div>

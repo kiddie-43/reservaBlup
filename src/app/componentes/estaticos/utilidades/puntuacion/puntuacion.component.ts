@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 @Component({
@@ -7,15 +7,19 @@ import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
   styleUrls: ['./puntuacion.component.scss']
 })
 export class PuntuacionComponent implements OnInit {
- color: ThemePalette = 'primary';
+ @Input() value !: any ;
+ 
+  color: ThemePalette = 'primary';
    mode: ProgressSpinnerMode = 'determinate';
-   value = 100;
-   valueMedia = 10;
+   //value = 100;
+   valueMedia !: Number ;
   constructor(
    
   ) { }
 
   ngOnInit(): void {
+  this.valueMedia = this.value /10;
+
   }
 
 }

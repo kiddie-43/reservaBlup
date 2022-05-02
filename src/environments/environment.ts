@@ -5,6 +5,7 @@
 export const environment = {
   production: false, 
   urlServer : "http://dws.local/api/", 
+  userCode : "4143bfc08b90fb34d0714382a64f4f6e"
 };
 
 /*

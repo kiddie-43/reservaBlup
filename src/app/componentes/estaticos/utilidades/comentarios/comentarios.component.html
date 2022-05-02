@@ -1,99 +1,19 @@
-<!-- <div class="row">
-    <div class="col-12 p-5 " >
-
-        <div class="row p-3 rounded" style="border: 2px solid black;">
-            <div class="col-xl-2 d-flex justify-content-center align-items-center">
-               
-                <img src="../../../../../assets/img/users/noperfil.jpg" class="rounded-circle" alt="" style="width: 8rem; height: 8rem;">      
-     
-           
-            </div>
-
-            <div class="col-xl-8 d-flex justify-content-start align-items-start ">
-                <p style="width: 100%; padding: 2rem; text-align: left;" > 
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis fugit quibusdam a magni fugiat molestiae. Animi quasi delectus, consectetur officia illum ad, voluptates a dicta dolorem nesciunt, saepe fugiat alias!
-                  </p>
-            </div>
-            <div class="col-xl-2 d-flex justify-content-center align-items-center">
-               
-                <app-puntuacion></app-puntuacion>
-     
-            </div>
-
-
-        </div>
-
-    </div>
-
- 
-</div>
-
- -->
-
-
-
-
- <div class="d-flex justify-content-center align-items-center">
-<!-- style="width: 50%;" -->
-
-
-
-
- <mat-card class="example-card carrusel-container" >
+<div style="width: 100%;" class="d-flex justify-content-center align-items-center">
+    <!-- style="width: 50%;" -->
+    <mat-card class="example-card " style="width: 200%;">
         <mat-card-title-group>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Small</mat-card-subtitle>
-          <img mat-card-sm-image class="rounded" src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+            <mat-card-title>{{comentario.nombre_usuario}}</mat-card-title>
+            <mat-card-subtitle
+                [ngClass]="{'suspenso' :comentario.valoracion<5,'raspado': comentario.valoracion >=5 && comentario.valoracion<=7, 'bueno' : comentario.valoracion >=8 && comentario.valoracion<=10 }">
+                {{comentario.valoracion}} / 10</mat-card-subtitle>
+            <img mat-card-sm-image class="rounded" src="{{comentario.perfil}}">
         </mat-card-title-group>
         <mat-card-content>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero optio cumque vero aspernatur architecto! Obcaecati veritatis optio repellat aliquid ut consectetur, dolorum neque vel est. Quisquam necessitatibus iste magni a?
+            {{comentario.comentario}}
         </mat-card-content>
-    </mat-card> 
-
+    
+        <button mat-button color="primary" (click)="actualizarComentario()">Editar</button>
+        <button mat-button color="warn" (click)="eliminarComentario(comentario.id)">Eliminar</button>
+    </mat-card>
 
 </div>
-
-
-
-
-
-
-
-
-
-<!-- 
-<div class="d-flex justify-content-start" style="font-size:1rem; height: 10rem; border: 1px solid black; width: 80%;" >
-       
-    <div class="d-flex justify-content-start align-items-center " style="margin-right: 3rem;">
-        <mat-icon style="font-size: 3rem;">account_circle</mat-icon>
-    </div>
-
-    <div class="d-flex justify-content-start align-items-center ">
-    
-        
-    </div>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  

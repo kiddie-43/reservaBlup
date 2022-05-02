@@ -25,10 +25,12 @@ export class LocalesComponent implements OnInit {
   }
   getLocales() {
 
-    return this.localesService.obtenerLocales().subscribe((params: any) => {
-     const response = params;
-     this.listaLocales = response[0];
+    return this.localesService.obtenerLocales().subscribe((resp: any) => {
+     
+     this.listaLocales = resp;
      this.cargando = false;
+
+     console.log(this.listaLocales)
       return this.listaLocales;
     })
   }

@@ -11,7 +11,11 @@ export class NavbarComponent implements OnInit {
   constructor(
 public usuarioService :UsuarioService
 
-  ) { }
+  ) { 
+
+
+    this.usuarioService.estaRegistrado();
+  }
 
   ngOnInit(): void {
   }

@@ -8,20 +8,23 @@ import { map } from 'rxjs';
 })
 export class UsuarioService {
 
-  public registado =false;
+  public registado !: boolean;
 
   constructor(
-    private http : HttpClient
-  ) { }
+    private http: HttpClient
+  ) {
+
+
+  }
 
   getRegistrado() {
     return this.registado;
   }
-  
+
   inicioSesion(params: any) {
 
     // ?email=${params.email}&pass=${params.pass}`
-    return this.http.post(`${environment.urlServer}/users/getUserSesion.php`, JSON.stringify(params)).pipe(map((result:any)=>{
+    return this.http.post(`${environment.urlServer}/users/getUserSesion.php`, JSON.stringify(params)).pipe(map((result: any) => {
       console.log(result);
 
       return result;
@@ -29,14 +32,16 @@ export class UsuarioService {
   }
 
   registrarse(params: any) {
-    return this.http.post(`${environment.urlServer}/users/registrarse.php`, JSON.stringify(params));
+    return this.http.post(`${environment.urlServer}/users/createUser.php`, JSON.stringify(params));
   }
 
   obtenerDatosUser(params: any) {
     return this.http.get(`${environment.urlServer}/users/data.php?id=${params.id}`);
   }
 
-
+  estaRegistrado() {
+    this.registado = localStorage.getItem(environment.userCode) ? true : false;
+  }
 
 
 }

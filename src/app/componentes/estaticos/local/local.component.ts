@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LocalesService } from 'src/app/servicios/locales.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,6 +17,9 @@ export class LocalComponent implements OnInit {
   local !: any;
   carusel !: Array<string>;
   idLocal !: number;
+  comentarios : any;
+  updateComent : any = false;
+
   constructor(
     private localService: LocalesService,
     private activateRoute: ActivatedRoute,
@@ -32,7 +35,7 @@ export class LocalComponent implements OnInit {
       this.idLocal = params['id_local'];
       //this.getLocal(params['id_local']);
       this.getLocal();
-      this.getComentarios()
+     
     });
   }
 
@@ -44,7 +47,8 @@ export class LocalComponent implements OnInit {
     });
   }
 
-  crearCoemtario() {
+  crearComentario() {
+    this.updateComent = !this.updateComent;
     const params = {
       edit: false,
       data: {
@@ -52,19 +56,15 @@ export class LocalComponent implements OnInit {
       }
     };
 
-    const dialogRef = this.dialog.open(ComentarioComponent, { data: params, panelClass: "comentario" },);
+    const dialogRef = this.dialog.open(ComentarioComponent, { data: params },);
 
      dialogRef.afterClosed().subscribe((resp: any) => {
-    this.getLocal();
-
+      this.getLocal();
+      this.updateComent = true;
     })
 
   }
 
-  getComentarios(){
-    this.comentariosService.getComentarios(this.idLocal).subscribe((result : any)=>{
-      
-    })
-  }
+  
 }
 

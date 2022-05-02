@@ -30,7 +30,8 @@ import { ComentariosComponent } from './componentes/estaticos/utilidades/comenta
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MensageComponent } from './componentes/estaticos/utilidades/mensage/mensage.component'; 
+import { MensageComponent } from './componentes/estaticos/utilidades/mensage/mensage.component';
+import { TarjetaComentarioComponent } from './componentes/estaticos/utilidades/comentarios/tarjeta-comentario/tarjeta-comentario.component'; 
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { MensageComponent } from './componentes/estaticos/utilidades/mensage/men
     ComentarioComponent,
     ComentariosComponent,
     MensageComponent,
+    TarjetaComentarioComponent,
 
 
 

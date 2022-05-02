@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MatDialogRef, MatDialogTitle, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import { ComentariosService } from 'src/app/servicios/comentarios.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -25,14 +26,12 @@ export class ComentarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+ 
+ console.log(this.data);
     this.formularioComentario = this.fb.group({
-      comentario: ['', [Validators.required]],
-      puntuacion: [0, [Validators.required]]
-
-
+      comentario: [this.data.data.comentario ? this.data.data.comentario : "" , [Validators.required]],
+      puntuacion: [this.data.data.puntuacion ? this.data.data.puntuacion : 0, [Validators.required]]
     })
-
-
   }
 
   crearComentario() {
@@ -57,13 +56,25 @@ export class ComentarioComponent implements OnInit {
 
   }
 
-  updateComentario(idComentario: number | undefined) {
+  updateComentario() {
+
     const params = {
-      descripcion: this.formularioComentario.controls?.['comentario'].value,
+      comentario: this.formularioComentario.controls?.['comentario'].value,
       puntuacion: this.formularioComentario.controls?.['puntuacion'].value,
-      idComentario: idComentario,
+      id_comentario: this.data.data.idComentario,
 
     }
+
+    this.comnetarioServie.updateComentario(params).subscribe((resp: any) => {
+      if (resp['mensage'].mensageType === 1) {
+        this.dialogRef.close(true);
+      }
+      if (resp['mensage'].mensageType === 3) {
+        alert(resp['mensage'].mensageText)
+      }
+
+    })
+
 
 
   }
@@ -77,11 +88,8 @@ export class ComentarioComponent implements OnInit {
     if (!this.data.edit) {
       this.crearComentario();
     } else {
-      this.updateComentario(this.data.idComentario);
+      this.updateComentario();
     }
-
-
-
   }
 
 

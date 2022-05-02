@@ -20,11 +20,5 @@ export class TabComponent implements OnInit {
  constructor() { }
 
   ngOnInit(): void {
-
-    console.log(this.valoracion)
   }
-
-
-
-
 }

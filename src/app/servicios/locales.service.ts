@@ -11,15 +11,23 @@ export class LocalesService {
   constructor(
     private http: HttpClient
   ) { }
-  
-  
+
+
   obtenerLocales() {
     return this.http.get(`${environment.urlServer}/locales/locales.php`);
   }
 
   getLocal(id: any) {
-   return this.http.get(`${environment.urlServer}/locales/local.php?id_local=` + id).pipe(map((result:any)=>{
-     return result.datos;
-   }));
+    return this.http.get(`${environment.urlServer}/locales/local.php?id_local=` + id).pipe(map((result: any) => {
+      return result.datos;
+    }));
   }
+
+
+
+
+
+
+
+
 }

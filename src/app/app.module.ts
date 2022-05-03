@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { InicioComponent } from './componentes/estaticos/inicio/inicio.component';
+import { InicioComponent } from './componentes/usuario-crud/inicio/inicio.component';
 import { GoogleMapsComponent } from './componentes/estaticos/utilidades/google-maps/google-maps.component';
 MatButtonModule
 import { MatSliderModule } from '@angular/material/slider';
@@ -30,7 +30,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MensageComponent } from './componentes/estaticos/utilidades/mensage/mensage.component';
-import { TarjetaComentarioComponent } from './componentes/estaticos/utilidades/comentarios/tarjeta-comentario/tarjeta-comentario.component'; 
+import { TarjetaComentarioComponent } from './componentes/estaticos/utilidades/comentarios/tarjeta-comentario/tarjeta-comentario.component';
+import { RegistrarUsuarioComponent } from './componentes/usuario-crud/registrar-usuario/registrar-usuario.component'; 
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { TarjetaComentarioComponent } from './componentes/estaticos/utilidades/c
     ComentariosComponent,
     MensageComponent,
     TarjetaComentarioComponent,
+    RegistrarUsuarioComponent,
 
 
 

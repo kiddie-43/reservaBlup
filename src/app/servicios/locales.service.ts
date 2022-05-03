@@ -14,11 +14,11 @@ export class LocalesService {
 
 
   obtenerLocales() {
-    return this.http.get(`${environment.urlServer}/locales/locales.php`);
+    return this.http.get(`${environment.urlServer}/locales/locales.php`).pipe(map((result : any)=>{ return result.data;  }));
   }
 
   getLocal(id: any) {
-    return this.http.get(`${environment.urlServer}/locales/local.php?id_local=` + id).pipe(map((result: any) => {
+    return this.http.get(`${environment.urlServer}/locales/local.php?id_local=${id}`).pipe(map((result: any) => {
       return result.datos;
     }));
   }

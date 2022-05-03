@@ -5,29 +5,22 @@ import { MatDialogRef, MatDialogTitle, MAT_DIALOG_DATA } from '@angular/material
 import { ComentariosService } from 'src/app/servicios/comentarios.service';
 import { environment } from 'src/environments/environment.prod';
 
-MatDialogTitle
-
 @Component({
-  selector: 'app-comentario',
-  templateUrl: './comentario.component.html',
-  styleUrls: ['./comentario.component.scss']
+  selector: 'app-comentarios-form',
+  templateUrl: './comentarios-form.component.html',
+  styleUrls: ['./comentarios-form.component.scss']
 })
-export class ComentarioComponent implements OnInit {
-
-
+export class ComentariosFormComponent implements OnInit {
   formularioComentario!: FormGroup;
-
-
   constructor(
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private comnetarioServie: ComentariosService,
-    public dialogRef: MatDialogRef<ComentarioComponent>,
+    public dialogRef: MatDialogRef<ComentariosFormComponent>,
   ) { }
 
   ngOnInit(): void {
- 
- console.log(this.data);
+
     this.formularioComentario = this.fb.group({
       comentario: [this.data.data.comentario ? this.data.data.comentario : "" , [Validators.required]],
       puntuacion: [this.data.data.puntuacion ? this.data.data.puntuacion : 0, [Validators.required]]
@@ -91,7 +84,4 @@ export class ComentarioComponent implements OnInit {
       this.updateComentario();
     }
   }
-
-
-
 }

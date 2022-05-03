@@ -6,10 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./tab-perfil.component.scss']
 })
 export class TabPerfilComponent implements OnInit {
-  @Input() hostelero: boolean = true;
+@Input() hostelero: boolean = true;
+ hostelero2 = true;
   constructor() { }
 
   ngOnInit(): void {
+
+    
   }
 
 }

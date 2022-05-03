@@ -1,9 +1,9 @@
-<app-loading *ngIf="cargando" class="d-flex align-items-center "></app-loading>
+<app-loading *ngIf="cargando" class="d-flex justify-content-center align-items-center" style="height: 40rem;"></app-loading>
 
 
 <div style="width: 100%;" class="d-flex justify-content-center align-items-center flex-column" *ngIf="!cargando">
 
-    <div class="carrusel-container ">
+    <div class="carrusel-container " >
         <app-carrusel class="w-100" [carrusel]="local.carrusel" class="carrusel"></app-carrusel>
     </div>
 

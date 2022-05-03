@@ -19,23 +19,34 @@ export class PerfilUsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  
-    this.userData = this.form.group({
-      // nickUser: [(response['data'].nick) ? response['data'].nick : "",],
-      // nombreUser: [(response['data'].nombre) ? response['data'].nombre : ""],
-      // telefonoUser: [(response['data'].telefono) ? response['data'].telefono : ""],
-      // emailUser: [(response['data'].email) ? response['data'].email : ""],
-  
-      nickUser: [""],
-      nombreUser: [""],
-      telefonoUser: [""],
-      emailUser: [""],
-  
-  
-    });
-  
-  
+
+
+    this.getDataUsuario();
+
+
   }
-  
+
+  getDataUsuario() {
+
+    this.usuarioService.getUserData().subscribe((result: any) => {
+      this.userData = result.data;
+      this.createForm();
+    })
+  }
+
+
+  createForm() {
+
+    this.userData = this.form.group({
+      nickUser: [(this.userData.nombre_usuario) ? this.userData.nombre_usuario : "",],
+      nombreUser: [(this.userData.nombre_usuario) ? this.userData.nombre_usuario : ""],
+      telefonoUser: [(this.userData.telefono_user) ? this.userData.telefono_user : ""],
+      emailUser: [(this.userData.email_user) ? this.userData.email_user : ""],
+
+
+
+    });
+
+  }
 
 }

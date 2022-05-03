@@ -1,9 +1,9 @@
 import { Component, Inject, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ComentarioComponent } from '../../comentario/comentario.component';
-import { ComentariosService } from '../../../../servicios/comentarios.service';
+import { ComentariosService } from '../../servicios/comentarios.service';
 import { TarjetaComentarioComponent } from './tarjeta-comentario/tarjeta-comentario.component';
-import { environment } from '../../../../../environments/environment.prod';
+import { environment } from '../../../environments/environment.prod';
+import { ComentariosFormComponent } from '../formularios/comentarios-form/comentarios-form.component';
 
 
 @Component({
@@ -59,7 +59,7 @@ export class ComentariosComponent implements OnInit {
       }
     };
 
-    const dialogRef = this.dialog.open(ComentarioComponent, { data: params, panelClass: "comentario" },);
+    const dialogRef = this.dialog.open(ComentariosFormComponent, { data: params, panelClass: "comentario" },);
     dialogRef.afterClosed().subscribe((result: any) => {
       this.getComentarios();
     })

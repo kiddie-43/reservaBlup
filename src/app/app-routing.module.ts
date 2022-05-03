@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
-import { LocalComponent } from './componentes/estaticos/local/local.component';
+import { LocalComponent } from './componentes/local/local.component';
 import { InicioComponent } from './componentes/usuario-crud/inicio/inicio.component';
 import { RegistrarUsuarioComponent } from './componentes/usuario-crud/registrar-usuario/registrar-usuario.component';
 import { PerfilUsuarioComponent } from './componentes/perfiles/perfil-usuario/perfil-usuario.component';

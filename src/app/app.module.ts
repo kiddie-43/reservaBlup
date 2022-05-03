@@ -8,7 +8,6 @@ import { FooterComponent } from './componentes/estaticos/footer/footer.component
 import { NavbarComponent } from './componentes/estaticos/navbar/navbar.component';
 import { LogoComponent } from './componentes/estaticos/logo/logo.component';
 import { LocalesComponent } from './componentes/locales/locales.component';
-import { LocalComponent } from './componentes/estaticos/local/local.component';
 import { LoadingComponent } from './componentes/utilidades/loading/loading.component';
 import { CarruselComponent } from './componentes/utilidades/carrusel/carrusel.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -18,24 +17,25 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InicioComponent } from './componentes/usuario-crud/inicio/inicio.component';
 import { GoogleMapsComponent } from './componentes/estaticos/utilidades/google-maps/google-maps.component';
-MatButtonModule
+
 import { MatSliderModule } from '@angular/material/slider';
 import { PuntuacionComponent } from './componentes/utilidades/puntuacion/puntuacion.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TabComponent } from './componentes/utilidades/tab/tab.component';
-import {MatIconModule} from '@angular/material/icon';
-import { ComentarioComponent } from './componentes/estaticos/comentario/comentario.component';
-import { ComentariosComponent } from './componentes/estaticos/utilidades/comentarios/comentarios.component';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { ComentariosComponent } from './componentes/comentarios/comentarios.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MensageComponent } from './componentes/estaticos/utilidades/mensage/mensage.component';
-import { TarjetaComentarioComponent } from './componentes/estaticos/utilidades/comentarios/tarjeta-comentario/tarjeta-comentario.component';
+import { TarjetaComentarioComponent } from './componentes/comentarios/tarjeta-comentario/tarjeta-comentario.component';
 import { RegistrarUsuarioComponent } from './componentes/usuario-crud/registrar-usuario/registrar-usuario.component';
 import { PerfilUsuarioComponent } from './componentes/perfiles/perfil-usuario/perfil-usuario.component';
 import { PerfilesComponent } from './componentes/perfiles/perfiles.component';
 import { LocalPerfilComponent } from './componentes/perfiles/local-perfil/local-perfil.component';
-import { TabPerfilComponent } from './componentes/utilidades/tab-perfil/tab-perfil.component'; 
+import { TabPerfilComponent } from './componentes/utilidades/tab-perfil/tab-perfil.component';
+import { LocalComponent } from './componentes/local/local.component';
+import { ComentariosFormComponent } from './componentes/formularios/comentarios-form/comentarios-form.component';
 
 @NgModule({
   declarations: [
@@ -52,15 +52,15 @@ import { TabPerfilComponent } from './componentes/utilidades/tab-perfil/tab-perf
     GoogleMapsComponent,
     PuntuacionComponent,
     TabComponent,
-    ComentarioComponent,
     ComentariosComponent,
     MensageComponent,
     TarjetaComentarioComponent,
     RegistrarUsuarioComponent,
     PerfilUsuarioComponent,
     PerfilesComponent,
-    LocalPerfilComponent,
     TabPerfilComponent,
+    ComentariosFormComponent,
+    LocalPerfilComponent
 
 
 
@@ -76,10 +76,10 @@ import { TabPerfilComponent } from './componentes/utilidades/tab-perfil/tab-perf
     ReactiveFormsModule,
     MatButtonModule,
     MatSliderModule,
-    MatTabsModule, 
-    MatIconModule, 
+    MatTabsModule,
+    MatIconModule,
     MatDividerModule,
-    MatCardModule, 
+    MatCardModule,
     MatDialogModule
   ],
   providers: [],

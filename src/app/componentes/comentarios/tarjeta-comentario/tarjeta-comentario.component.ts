@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ComentariosFormComponent } from '../../formularios/comentarios-form/comentarios-form.component';
 
-import { ComentarioComponent } from '../../../comentario/comentario.component';
 
 @Component({
   selector: 'app-tarjeta-comentario',
@@ -34,7 +34,7 @@ constructor(
       }
     };
 
-    const dialogRef = this.dialog.open(ComentarioComponent, { data: params, panelClass: "comentario" },);
+    const dialogRef = this.dialog.open(ComentariosFormComponent, { data: params, panelClass: "comentario" },);
     dialogRef.afterClosed().subscribe((result: any) => {
 
     })

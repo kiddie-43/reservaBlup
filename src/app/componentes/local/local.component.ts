@@ -3,9 +3,10 @@ import { LocalesService } from 'src/app/servicios/locales.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ComentarioComponent } from '../comentario/comentario.component';
+
 import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
-import { ComentariosService } from '../../../servicios/comentarios.service';
+import { ComentariosService } from '../../servicios/comentarios.service';
+import { ComentariosFormComponent } from '../formularios/comentarios-form/comentarios-form.component';
 
 @Component({
   selector: 'app-local',
@@ -56,7 +57,7 @@ export class LocalComponent implements OnInit {
       }
     };
 
-    const dialogRef = this.dialog.open(ComentarioComponent, { data: params },);
+    const dialogRef = this.dialog.open(ComentariosFormComponent, { data: params },);
 
      dialogRef.afterClosed().subscribe((resp: any) => {
       this.getLocal();

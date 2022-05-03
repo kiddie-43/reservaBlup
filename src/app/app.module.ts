@@ -9,8 +9,8 @@ import { NavbarComponent } from './componentes/estaticos/navbar/navbar.component
 import { LogoComponent } from './componentes/estaticos/logo/logo.component';
 import { LocalesComponent } from './componentes/locales/locales.component';
 import { LocalComponent } from './componentes/estaticos/local/local.component';
-import { LoadingComponent } from './componentes/estaticos/utilidades/loading/loading.component';
-import { CarruselComponent } from './componentes/estaticos/utilidades/carrusel/carrusel.component';
+import { LoadingComponent } from './componentes/utilidades/loading/loading.component';
+import { CarruselComponent } from './componentes/utilidades/carrusel/carrusel.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -20,9 +20,9 @@ import { InicioComponent } from './componentes/usuario-crud/inicio/inicio.compon
 import { GoogleMapsComponent } from './componentes/estaticos/utilidades/google-maps/google-maps.component';
 MatButtonModule
 import { MatSliderModule } from '@angular/material/slider';
-import { PuntuacionComponent } from './componentes/estaticos/utilidades/puntuacion/puntuacion.component';
+import { PuntuacionComponent } from './componentes/utilidades/puntuacion/puntuacion.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { TabComponent } from './componentes/estaticos/utilidades/tab/tab.component';
+import { TabComponent } from './componentes/utilidades/tab/tab.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ComentarioComponent } from './componentes/estaticos/comentario/comentario.component';
 import { ComentariosComponent } from './componentes/estaticos/utilidades/comentarios/comentarios.component';
@@ -31,7 +31,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MensageComponent } from './componentes/estaticos/utilidades/mensage/mensage.component';
 import { TarjetaComentarioComponent } from './componentes/estaticos/utilidades/comentarios/tarjeta-comentario/tarjeta-comentario.component';
-import { RegistrarUsuarioComponent } from './componentes/usuario-crud/registrar-usuario/registrar-usuario.component'; 
+import { RegistrarUsuarioComponent } from './componentes/usuario-crud/registrar-usuario/registrar-usuario.component';
+import { PerfilUsuarioComponent } from './componentes/perfiles/perfil-usuario/perfil-usuario.component';
+import { PerfilesComponent } from './componentes/perfiles/perfiles.component';
+import { LocalPerfilComponent } from './componentes/perfiles/local-perfil/local-perfil.component';
+import { TabPerfilComponent } from './componentes/utilidades/tab-perfil/tab-perfil.component'; 
 
 @NgModule({
   declarations: [
@@ -53,6 +57,10 @@ import { RegistrarUsuarioComponent } from './componentes/usuario-crud/registrar-
     MensageComponent,
     TarjetaComentarioComponent,
     RegistrarUsuarioComponent,
+    PerfilUsuarioComponent,
+    PerfilesComponent,
+    LocalPerfilComponent,
+    TabPerfilComponent,
 
 
 

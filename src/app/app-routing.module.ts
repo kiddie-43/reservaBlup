@@ -4,6 +4,8 @@ import { HomeComponent } from './componentes/home/home.component';
 import { LocalComponent } from './componentes/estaticos/local/local.component';
 import { InicioComponent } from './componentes/usuario-crud/inicio/inicio.component';
 import { RegistrarUsuarioComponent } from './componentes/usuario-crud/registrar-usuario/registrar-usuario.component';
+import { PerfilUsuarioComponent } from './componentes/perfiles/perfil-usuario/perfil-usuario.component';
+import { PerfilesComponent } from './componentes/perfiles/perfiles.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,7 @@ const routes: Routes = [
   { path: 'local/:id_local', component: LocalComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'registar', component: RegistrarUsuarioComponent },
-  
+  { path: 'perfil', component: PerfilesComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

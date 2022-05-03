@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment.prod';
   providedIn: 'root'
 })
 export class LocalesService {
-  url = 'http://dws.local/api';
+
   constructor(
     private http: HttpClient
   ) { }
@@ -18,7 +18,7 @@ export class LocalesService {
   }
 
   getLocal(id: any) {
-    return this.http.get(`${environment.urlServer}/locales/local.php?id_local=${id}`).pipe(map((result: any) => {
+    return this.http.get(`${environment.urlServer}/local/getLocal.php?id_local=${id}`).pipe(map((result: any) => {
       return result.datos;
     }));
   }

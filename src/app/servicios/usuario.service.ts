@@ -42,6 +42,11 @@ export class UsuarioService {
   estaRegistrado() {
     this.registado = localStorage.getItem(environment.userCode) ? true : false;
   }
+getHostelero(){
+  return this.http.get(`${environment.urlServer}/utilidades/getHostelero.php?id_usuario=${localStorage.getItem(environment.userCode)}`).pipe(map((result:any)=>{
+    return result;
+  }))
+}
 
 
 }

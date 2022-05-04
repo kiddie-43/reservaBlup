@@ -1,10 +1,10 @@
 
-    <div style="width: 100%;">
+    <div style="width: 100%; margin-top: 3rem; margin-bottom: 3rem; padding: 2rem; ">
         <h1 class="text-center">Inicio de sesion </h1>
         <form class="formulario" [formGroup]="inicioSesionUsuarioForm" autocomplete="off" style="width: 100%;">
 
             <div class="text-center m-3 "style="width: 100%;" >
-                <mat-form-field appearance="outline" class="carrusel">
+                <mat-form-field appearance="outline" class="carrusel" style="max-width: 30rem;">
                     <mat-label>Enter your email</mat-label>
 
                     <input matInput type="text" formControlName="emailUser">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="text-center m-3 " style="width: 100%;">
-                <mat-form-field appearance="outline" class="carrusel">
+                <mat-form-field appearance="outline" class="carrusel" style="max-width: 30rem;">
                     <mat-label>Enter your password</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="passUser">
 

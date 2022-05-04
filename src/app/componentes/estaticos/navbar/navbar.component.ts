@@ -12,8 +12,6 @@ export class NavbarComponent implements OnInit {
 public usuarioService :UsuarioService
 
   ) { 
-
-
     this.usuarioService.estaRegistrado();
   }
 

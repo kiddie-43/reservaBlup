@@ -30,7 +30,7 @@ public registrarsuarioForm !: FormGroup;
         [
           Validators.required,
           Validators.pattern('[a-z A-Z]{0,40}'),
-          Validators.maxLength(9),
+          
         ],
       ],
       nombreUser: [

@@ -36,6 +36,7 @@ import { LocalPerfilComponent } from './componentes/perfiles/local-perfil/local-
 import { TabPerfilComponent } from './componentes/utilidades/tab-perfil/tab-perfil.component';
 import { LocalComponent } from './componentes/local/local.component';
 import { ComentariosFormComponent } from './componentes/formularios/comentarios-form/comentarios-form.component';
+import { ReservasCardComponent } from './componentes/reservas-card/reservas-card.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ComentariosFormComponent } from './componentes/formularios/comentarios-
     PerfilesComponent,
     TabPerfilComponent,
     ComentariosFormComponent,
-    LocalPerfilComponent
+    LocalPerfilComponent,
+    ReservasCardComponent
 
 
 

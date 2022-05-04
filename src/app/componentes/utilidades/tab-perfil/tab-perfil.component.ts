@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TabPerfilComponent implements OnInit {
 @Input() hostelero: boolean = true;
- hostelero2 = true;
+
   constructor() { }
 
   ngOnInit(): void {

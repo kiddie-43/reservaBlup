@@ -3,18 +3,19 @@
     <ng-template mat-tab-label class="header-text">
       Usuario
     </ng-template>
-    <!-- <app-perfil-usuario></app-perfil-usuario> -->
-    <app-reservas-card></app-reservas-card>
+    <!--  -->    <app-perfil-usuario></app-perfil-usuario>
+    
   </mat-tab>
 
   <mat-tab>
     <ng-template mat-tab-label class="header-text">
       Mis reservas
     </ng-template>
-
+<!-- <app-reservas-card></app-reservas-card> -->
+<app-reservas [hostelero]="hostelero"></app-reservas>
   </mat-tab>
 
-  <mat-tab *ngIf="hostelero2">
+  <mat-tab *ngIf="hostelero">
     <ng-template mat-tab-label="aaaaa">
       Local
     </ng-template>
@@ -22,11 +23,11 @@
 
 
   </mat-tab>
-  <mat-tab *ngIf="hostelero2">
+  <mat-tab *ngIf="hostelero">
     <ng-template mat-tab-label="aaaaa">
       Gestionar reservas local
     </ng-template>
-    <app-local-perfil></app-local-perfil>
+    <app-reservas [hostelero]="hostelero"></app-reservas>
 
 
   </mat-tab>

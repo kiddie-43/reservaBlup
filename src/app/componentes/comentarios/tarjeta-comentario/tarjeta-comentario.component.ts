@@ -1,5 +1,7 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ComentariosService } from 'src/app/servicios/comentarios.service';
+import { environment } from 'src/environments/environment.prod';
 import { ComentariosFormComponent } from '../../formularios/comentarios-form/comentarios-form.component';
 
 
@@ -12,11 +14,12 @@ export class TarjetaComentarioComponent implements OnInit {
 @Input() comentario : any ;
 
 updateData:boolean = false ;
-
+idUsuario = localStorage.getItem(environment.userCode);
 //@Output('miEvento') actualiza : EventEmitter = new EventEmitter(); 
+@Output () valueResponse: EventEmitter<string> = new EventEmitter();
 constructor(
    private dialog: MatDialog,
-  
+  private comentariosService : ComentariosService
 ) { }
 
 
@@ -36,14 +39,15 @@ constructor(
 
     const dialogRef = this.dialog.open(ComentariosFormComponent, { data: params, panelClass: "comentario" },);
     dialogRef.afterClosed().subscribe((result: any) => {
-
+      this.valueResponse.emit('actualiza');
     })
 
   }
 
   eliminarComentario(idComentario: number) {
-    this.updateDataPadre();
-    return idComentario;
+    this.comentariosService.deleteComentario(idComentario).subscribe((resp: any) => {
+      this.valueResponse.emit('actualiza');
+    })
   }
 
 

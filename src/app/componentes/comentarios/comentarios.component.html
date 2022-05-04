@@ -1,10 +1,7 @@
-<div style="width: 100%; margin-bottom: 3rem;" *ngFor="let comment of comentarios">
-    <div>
-        <app-tarjeta-comentario [comentario]="comment"></app-tarjeta-comentario>
+<div style="width: 100%; margin-bottom: 3rem;max-width: 50rem;" class="d-flex justify-content-center flex-column" *ngFor="let comment of comentarios" >
+    <div >
+        <app-tarjeta-comentario (valueResponse)="recibiRespuesta($event)"  [comentario]="comment"></app-tarjeta-comentario>
     </div>
 
-    <div *ngIf="comment.id_usuario == idUsuario">
-        <button mat-button color="primary" (click)="actualizarComentario(comment)">Editar</button>
-        <button mat-button color="warn" (click)="eliminarComentario(comment.id)">Eliminar</button>
-    </div>
+    
 </div>

@@ -18,25 +18,26 @@ export class ComentariosComponent implements OnInit {
   //@ViewChild(TarjetaComentarioComponent)child  ;
 
   @Input() idLocal: number = 0;
-  @Input() cambiosComentarios !: boolean ;
-  
+  @Input() cambiosComentarios !: boolean;
+
   comentarios: Array<any> = [];
-  idUsuario = localStorage.getItem(environment.userCode);
+
   constructor(
     private dialog: MatDialog,
     private comentariosService: ComentariosService
-
-  ) { 
-
-    console.log(this.idUsuario);
+  ) {}
+  
+  recibiRespuesta(value:any){
+    this.getComentarios();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-  
-      this.getComentarios();
- 
 
-    console.log("actualizar")
+  ngOnChanges(changes: SimpleChanges): void {
+
+    this.getComentarios();
+
+
+
   }
 
   ngOnInit(): void {
@@ -67,9 +68,9 @@ export class ComentariosComponent implements OnInit {
   }
 
   eliminarComentario(id: any) {
-this.comentariosService.deleteComentario(id).subscribe((resp:any)=>{
-  this.getComentarios();
-})
+    this.comentariosService.deleteComentario(id).subscribe((resp: any) => {
+      this.getComentarios();
+    })
   }
 
 

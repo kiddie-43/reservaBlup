@@ -1,8 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ReservasService } from '../../../servicios/reservas.service';
+import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 
+MatDatepicker
+MatDatepickerModule
+MatNativeDateModule
 @Component({
   selector: 'app-reserva-form',
   templateUrl: './reserva-form.component.html',
@@ -20,5 +25,9 @@ export class ReservaFormComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  // myFilter = (d: Date | null): boolean => {
+  //   const day = (d || new Date()).getDay();
+  //   // Prevent Saturday and Sunday from being selected.
+  //   return day !== 0 && day !== 6;
+  // };
 }

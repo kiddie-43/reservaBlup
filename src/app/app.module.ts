@@ -42,6 +42,7 @@ import { ReservasUsuarioComponent } from './componentes/reservas/reservas-usuari
 import { ReservasLocalComponent } from './componentes/reservas/reservas-local/reservas-local.component';
 import { ReservaFormComponent } from './componentes/formularios/reserva-form/reserva-form.component';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +92,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatDividerModule,
     MatCardModule,
     MatDialogModule, 
-    MatStepperModule
+    MatStepperModule, 
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

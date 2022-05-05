@@ -13,8 +13,8 @@ export class ReservasService {
   ) { }
 
 
-  getReservas( params : any ){
-    return this.http.post(`${environment.urlServer}/reservas/getReservas.php`, JSON.stringify(params)).pipe(map((result : any)=>{return result}))
+  getReservas( ){
+    return this.http.get(`${environment.urlServer}/reservas/getReservasUsuario.php?id_usuario=${localStorage.getItem(environment.userCode)}`).pipe(map((result : any)=>{return result}))
   }
 
 

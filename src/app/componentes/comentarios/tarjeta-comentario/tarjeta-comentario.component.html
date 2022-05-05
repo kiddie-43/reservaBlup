@@ -12,7 +12,7 @@
         <mat-card-content>
             {{comentario.comentario}}
         </mat-card-content>
-        <div *ngIf="comentario.id_usuario == idUsuario">
+        <div *ngIf="comentario.id_usuario == idUsuario" class="d-flex justify-content-end">
             <button mat-button color="primary" (click)="actualizarComentario()">Editar</button>
             <button mat-button color="warn" (click)="eliminarComentario(comentario.id)">Eliminar</button>
         </div>

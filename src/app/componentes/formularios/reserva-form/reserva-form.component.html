@@ -1,0 +1,87 @@
+
+<h2 mat-dialog-title style="width: 100%; " class="p-3">
+    <div class="d-flex justify-content-between ">
+    <div fxLayout="column" fxLayoutGap="gappx">
+        <div >
+            <div *ngIf="!data.edit" >
+            Reservar 
+            </div>
+            <div *ngIf="data.edit" >
+                Editar reserva
+            </div>
+        </div>
+    </div>
+    <button mat-icon-button mat-dialog-close aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>clear</mat-icon>
+      </button>
+      </div>
+</h2>
+
+
+
+<mat-dialog-content style="width: 100%; max-height: 100rem;">
+    <mat-stepper orientation="vertical">
+        <mat-step>
+            <ng-template matStepLabel>Informacion usuario</ng-template>
+            <ng-template matStepContent>
+              <p>Nombre completo</p>
+              <p>Telefono</p>
+              <p>email</p>
+              <button mat-button matStepperNext>Next</button>
+            </ng-template>
+          </mat-step>
+        
+          <mat-step>
+            <ng-template matStepLabel>Informacion local</ng-template>
+            <ng-template matStepContent>
+              <p>Nombre local</p>
+              <p>direccion</p>
+
+              <button mat-button matStepperNext>Next</button>
+            </ng-template>
+          </mat-step>
+        
+        
+        <mat-step>
+          <ng-template matStepLabel>Numero personas </ng-template>
+          <ng-template matStepContent>
+            <p>This content was rendered lazily</p>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+
+
+
+        <mat-step>
+          <ng-template matStepLabel> Hora / dia </ng-template>
+          <ng-template matStepContent>
+            <p>This content was also rendered lazily</p>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel> zona </ng-template>
+          <p>This content was rendered eagerly</p>
+          <button mat-button matStepperPrevious>Back</button>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel> comentario</ng-template>
+            <p>This content was rendered eagerly</p>
+            <button mat-button matStepperPrevious>Back</button>
+          </mat-step>
+  
+  
+          <mat-step>
+            <ng-template matStepLabel> confirmar</ng-template>
+            <p style="font-weight: bold;"> ¿*Estas seguro de estos datos* ? </p>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button >Done</button>
+          </mat-step>
+
+      </mat-stepper>
+      
+
+
+</mat-dialog-content>

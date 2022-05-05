@@ -11,8 +11,7 @@ export class ReservasComponent implements OnInit {
 
   
   @Input() hostelero : boolean = false;
- // @Input() usuario : boolean = true;
-
+   usuario : boolean = true;
   
   constructor (
     private reservasService : ReservasService
@@ -26,15 +25,16 @@ export class ReservasComponent implements OnInit {
 
   getReservas (    ){
 
-    const params = {
-      id : localStorage.getItem(environment.userCode), 
-      usuario : this.hostelero
-    }
+    // const params = {
+    //   id : localStorage.getItem(environment.userCode), 
+    //   usuario : this.hostelero
+    // }
 
-    this.reservasService.getReservas(params).subscribe((result)=>{
+    // this.reservasService.getReservas().subscribe((result)=>{
 
     
-    })
+    // })
   }
+
 
 }

@@ -12,8 +12,9 @@
       Mis reservas
     </ng-template>
 <!-- <app-reservas-card></app-reservas-card> -->
-<app-reservas [hostelero]="hostelero"></app-reservas>
-  </mat-tab>
+  <!-- <app-reservas [hostelero]="false"></app-reservas> -->
+<app-reservas-usuario></app-reservas-usuario>
+</mat-tab>
 
   <mat-tab *ngIf="hostelero">
     <ng-template mat-tab-label="aaaaa">
@@ -27,9 +28,7 @@
     <ng-template mat-tab-label="aaaaa">
       Gestionar reservas local
     </ng-template>
-    <app-reservas [hostelero]="hostelero"></app-reservas>
-
-
+   <app-reservas [hostelero]="true"></app-reservas> 
   </mat-tab>
 
 

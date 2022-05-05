@@ -7,6 +7,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
 import { ComentariosService } from '../../servicios/comentarios.service';
 import { ComentariosFormComponent } from '../formularios/comentarios-form/comentarios-form.component';
+import { ReservaFormComponent } from '../formularios/reserva-form/reserva-form.component';
 
 @Component({
   selector: 'app-local',
@@ -65,6 +66,22 @@ export class LocalComponent implements OnInit {
        this.updateComent = !this.updateComent;
     })
 
+  }
+
+  crearReserva(){
+    const params = {
+      edit: false,
+      data: {
+        idLocal: this.idLocal
+      }
+    };
+
+    const dialogRef = this.dialog.open(ReservaFormComponent, { data: params },);
+
+     dialogRef.afterClosed().subscribe((resp: any) => {
+      
+    })
+ 
   }
 
   

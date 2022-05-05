@@ -38,7 +38,10 @@ import { LocalComponent } from './componentes/local/local.component';
 import { ComentariosFormComponent } from './componentes/formularios/comentarios-form/comentarios-form.component';
 import { ReservasCardComponent } from './componentes/reservas/reservas-card/reservas-card.component';
 import { ReservasComponent } from './componentes/reservas/reservas.component';
-
+import { ReservasUsuarioComponent } from './componentes/reservas/reservas-usuario/reservas-usuario.component';
+import { ReservasLocalComponent } from './componentes/reservas/reservas-local/reservas-local.component';
+import { ReservaFormComponent } from './componentes/formularios/reserva-form/reserva-form.component';
+import {MatStepperModule} from '@angular/material/stepper';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +67,10 @@ import { ReservasComponent } from './componentes/reservas/reservas.component';
     ComentariosFormComponent,
     LocalPerfilComponent,
     ReservasCardComponent,
-    ReservasComponent
+    ReservasComponent,
+    ReservasUsuarioComponent,
+    ReservasLocalComponent,
+    ReservaFormComponent
 
 
 
@@ -84,7 +90,8 @@ import { ReservasComponent } from './componentes/reservas/reservas.component';
     MatIconModule,
     MatDividerModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule, 
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

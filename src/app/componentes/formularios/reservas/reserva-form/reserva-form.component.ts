@@ -6,6 +6,9 @@ import { ReservasService } from '../../../../servicios/reservas.service';
 import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
+import { AmazingTimePickerService, AmazingTimePickerModule } from 'amazing-time-picker';
+import { NgxMaterialTimepickerService } from 'ngx-material-timepicker/src/app/material-timepicker/services/ngx-material-timepicker.service';
+AmazingTimePickerService
 
 
 
@@ -47,13 +50,20 @@ export class ReservaFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private reservaService: ReservasService,
     public dialogRef: MatDialogRef<ReservaFormComponent>,
-  ) {
+  private atp : AmazingTimePickerService
+    ) {
     this.getReservaInfo();
     this.createForm();
   }
 
   ngOnInit(): void {
   }
+open(){
+  const AmazingTimePicker = this.atp.open();
+  AmazingTimePicker.afterClose().subscribe(time =>{
+    console.log(time)
+  })
+}
 
   getReservaInfo() {
     const params = {

@@ -47,6 +47,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SelectorHoraComponent } from './componentes/utilidades/selector-hora/selector-hora.component';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { AmazingTimePickerModule } from 'amazing-time-picker';
+
+
+
 @NgModule({
 
   declarations: [
@@ -102,7 +106,8 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     MatDatepickerModule,
     MatSelectModule,
     MatNativeDateModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    AmazingTimePickerModule
 
   ],
   providers: [],

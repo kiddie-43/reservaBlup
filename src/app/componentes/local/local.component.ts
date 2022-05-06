@@ -7,7 +7,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y/input-modality/input-modality-detector';
 import { ComentariosService } from '../../servicios/comentarios.service';
 import { ComentariosFormComponent } from '../formularios/comentarios-form/comentarios-form.component';
-import { ReservaFormComponent } from '../formularios/reserva-form/reserva-form.component';
+import { ReservaFormComponent } from '../formularios/reservas/reserva-form/reserva-form.component';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-local',
@@ -72,7 +73,8 @@ export class LocalComponent implements OnInit {
     const params = {
       edit: false,
       data: {
-        idLocal: this.idLocal
+        idLocal: this.idLocal, 
+        idUsuario : localStorage.getItem(environment.userCode)
       }
     };
 

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ReservaFormComponent } from '../../formularios/reserva-form/reserva-form.component';
+import { ReservaFormComponent } from '../../formularios/reservas/reserva-form/reserva-form.component';
 MAT_DIALOG_DATA
 
 MatDialog

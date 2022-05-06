@@ -17,5 +17,8 @@ export class ReservasService {
     return this.http.get(`${environment.urlServer}/reservas/getReservasUsuario.php?id_usuario=${localStorage.getItem(environment.userCode)}`).pipe(map((result : any)=>{return result}))
   }
 
+  getDataCreateReserva(params : any ){
+    return this.http.get(`${environment.urlServer}/reservas/getDataCreateReserva.php?id_usuario=${localStorage.getItem(environment.userCode)}&id_local=${params.idLocal}`).pipe(map(( result: any )=>{ return result}))
+  }
 
 }

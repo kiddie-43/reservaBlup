@@ -40,10 +40,14 @@ import { ReservasCardComponent } from './componentes/reservas/reservas-card/rese
 import { ReservasComponent } from './componentes/reservas/reservas.component';
 import { ReservasUsuarioComponent } from './componentes/reservas/reservas-usuario/reservas-usuario.component';
 import { ReservasLocalComponent } from './componentes/reservas/reservas-local/reservas-local.component';
-import { ReservaFormComponent } from './componentes/formularios/reserva-form/reserva-form.component';
+import { ReservaFormComponent } from './componentes/formularios/reservas/reserva-form/reserva-form.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+
 @NgModule({
+
   declarations: [
     AppComponent,
     HomeComponent,
@@ -93,7 +97,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatCardModule,
     MatDialogModule, 
     MatStepperModule, 
-    MatDatepickerModule
+    MatDatepickerModule, 
+  MatSelectModule, 
+  MatNativeDateModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

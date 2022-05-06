@@ -45,6 +45,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SelectorHoraComponent } from './componentes/utilidades/selector-hora/selector-hora.component';
 
 @NgModule({
 
@@ -75,7 +76,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReservasComponent,
     ReservasUsuarioComponent,
     ReservasLocalComponent,
-    ReservaFormComponent
+    ReservaFormComponent,
+    SelectorHoraComponent
 
 
 

@@ -41,12 +41,12 @@ import { ReservasComponent } from './componentes/reservas/reservas.component';
 import { ReservasUsuarioComponent } from './componentes/reservas/reservas-usuario/reservas-usuario.component';
 import { ReservasLocalComponent } from './componentes/reservas/reservas-local/reservas-local.component';
 import { ReservaFormComponent } from './componentes/formularios/reservas/reserva-form/reserva-form.component';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatSelectModule} from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SelectorHoraComponent } from './componentes/utilidades/selector-hora/selector-hora.component';
-
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 @NgModule({
 
   declarations: [
@@ -97,11 +97,12 @@ import { SelectorHoraComponent } from './componentes/utilidades/selector-hora/se
     MatIconModule,
     MatDividerModule,
     MatCardModule,
-    MatDialogModule, 
-    MatStepperModule, 
-    MatDatepickerModule, 
-  MatSelectModule, 
-  MatNativeDateModule
+    MatDialogModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    NgxMaterialTimepickerModule
 
   ],
   providers: [],

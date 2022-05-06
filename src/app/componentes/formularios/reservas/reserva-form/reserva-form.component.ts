@@ -4,6 +4,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ReservasService } from '../../../../servicios/reservas.service';
 import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+
+
+
 ReactiveFormsModule
 Validators
 MatDatepicker
@@ -15,12 +20,27 @@ MatNativeDateModule
   styleUrls: ['./reserva-form.component.scss']
 })
 export class ReservaFormComponent implements OnInit {
+  recogedor = true;
   desabilitado = "false";
   dataReserva !: any;
   createReservaForm !: any;
   zonaLocal: Array<any> = [];
   posicionConfirmarReserba : number = 1;
-
+  
+  darkTheme: NgxMaterialTimepickerModule = {
+    container: {
+      bodyBackgroundColor: '#424242',
+      buttonColor: '#fff'
+    },
+    dial: {
+      dialBackgroundColor: '#555',
+    },
+    clockFace: {
+      clockFaceBackgroundColor: '#555',
+      clockHandColor: '#9fbd90',
+      clockFaceTimeInactiveColor: '#fff'
+    }
+  };
 
   constructor(
     private fb: FormBuilder,

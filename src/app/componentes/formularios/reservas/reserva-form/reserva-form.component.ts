@@ -4,6 +4,14 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ReservasService } from '../../../../servicios/reservas.service';
 import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+import { AmazingTimePickerService, AmazingTimePickerModule } from 'amazing-time-picker';
+import { NgxMaterialTimepickerService } from 'ngx-material-timepicker/src/app/material-timepicker/services/ngx-material-timepicker.service';
+AmazingTimePickerService
+
+
+
 ReactiveFormsModule
 Validators
 MatDatepicker
@@ -15,25 +23,47 @@ MatNativeDateModule
   styleUrls: ['./reserva-form.component.scss']
 })
 export class ReservaFormComponent implements OnInit {
+  recogedor = true;
   desabilitado = "false";
   dataReserva !: any;
   createReservaForm !: any;
   zonaLocal: Array<any> = [];
   posicionConfirmarReserba : number = 1;
-
+  
+  darkTheme: NgxMaterialTimepickerModule = {
+    container: {
+      bodyBackgroundColor: '#424242',
+      buttonColor: '#fff'
+    },
+    dial: {
+      dialBackgroundColor: '#555',
+    },
+    clockFace: {
+      clockFaceBackgroundColor: '#555',
+      clockHandColor: '#9fbd90',
+      clockFaceTimeInactiveColor: '#fff'
+    }
+  };
 
   constructor(
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private reservaService: ReservasService,
     public dialogRef: MatDialogRef<ReservaFormComponent>,
-  ) {
+  private atp : AmazingTimePickerService
+    ) {
     this.getReservaInfo();
     this.createForm();
   }
 
   ngOnInit(): void {
   }
+open(){
+  const AmazingTimePicker = this.atp.open();
+  AmazingTimePicker.afterClose().subscribe(time =>{
+    console.log(time)
+  })
+}
 
   getReservaInfo() {
     const params = {
